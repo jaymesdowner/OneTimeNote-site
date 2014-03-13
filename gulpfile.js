@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     karma = require('gulp-karma'),
     livereload = require('gulp-livereload');
-    useref = require('gulp-useref');
+    usemin = require('gulp-usemin');
     deploy = require("gulp-gh-pages");
 
 gulp.task('test', function() {
@@ -86,7 +86,7 @@ gulp.task('build', function() {
 
     // 5 - Index file
     gulp.src('app/index.html')
-        .pipe(useref())
+        .pipe(usemin())
         .pipe(gulp.dest('./dist'));
 
     gulp.src("./dist/**/*")
