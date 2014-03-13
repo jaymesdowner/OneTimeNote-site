@@ -1,5 +1,7 @@
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('OneTimeNoteApp').controller('OneTimeNoteWelcomeCtrl', function($scope, $routeParams, $location, OneTimeNoteFactory) {
-    // Stuff in here maybe?
-});
+    angular.module('OneTimeNoteApp').controller('OneTimeNoteWelcomeCtrl', function($scope, $routeParams, $location, OneTimeNoteFactory) {
+        // Stuff in here maybe?
+    });
+})();

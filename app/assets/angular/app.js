@@ -14,7 +14,3 @@
         ])
         .constant('ApiUrl', 'http://onetimenote.com')
 })();
-
-//(function($) {
-//    $(document).foundation();
-//})(jQuery);

@@ -8,6 +8,8 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     karma = require('gulp-karma'),
     livereload = require('gulp-livereload');
+    useref = require('gulp-useref');
+    deploy = require("gulp-gh-pages");
 
 gulp.task('test', function() {
     // Be sure to return the stream
@@ -25,12 +27,15 @@ gulp.task('test', function() {
 });
 
 gulp.task('styles', function() {
+    connect.livereload = true;
+
     return gulp.src('./app/assets/sass/styles.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'ios 6', 'android 4'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
         .pipe(gulp.dest('./app/assets/css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(connect.reload())
         .pipe(notify({ message: 'Style task completed.' }));
 });
@@ -52,6 +57,40 @@ gulp.task('html', function () {
 gulp.task('watch', function() {
     gulp.watch(['./app/assets/angular/views/*.html'], ['html']);
     gulp.watch(['./app/assets/sass/*.scss'], ['styles']);
+});
+
+gulp.task('build', function() {
+
+    var gitRemoteUrl = 'https://github.com/Pathsofdesign/OneTimeNote-site';
+
+    // 1 - Scripts
+    gulp.src(['./app/assets/angular/app.js', './app/assets/angular/controllers/*', './app/assets/angular/services/*', './app/assets/js/*'])
+        .pipe(concat('scripts.min.js'))
+        .pipe(gulp.dest('./dist/assets/scripts'));
+
+    // 2 - CSS
+    gulp.src('./app/assets/css/styles.min.css')
+        .pipe(gulp.dest('./dist/assets/css'));
+
+    // 3 - Angular HTML: Views
+    gulp.src(['./app/assets/angular/views/*'])
+        .pipe(gulp.dest('./dist/assets/angular/views'));
+
+    // 3 - Angular HTML: Partials
+    gulp.src(['./app/assets/angular/partials/*'])
+        .pipe(gulp.dest('./dist/assets/angular/partials'));
+
+    // 4 - Fonts
+    gulp.src(['./app/assets/fonts/*'])
+        .pipe(gulp.dest('./dist/assets/fonts'));
+
+    // 5 - Index file
+    gulp.src('app/index.html')
+        .pipe(useref())
+        .pipe(gulp.dest('./dist'));
+
+    gulp.src("./dist/**/*")
+        .pipe(deploy(gitRemoteUrl));
 });
 
 gulp.task('serve', ['connect', 'watch']);

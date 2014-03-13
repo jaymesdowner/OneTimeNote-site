@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="OneTimeNoteApp">
 <head>
-    <title></title>
+    <title>OneTimeNote</title>
     <link href="/assets/css/styles.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -11,6 +11,7 @@
         <div ng-view=""></div>
     </div>
 </div>
+<!-- build:js assets/scripts/scripts.min.js -->
 <script src="bower_components/modernizr/modernizr.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
@@ -25,5 +26,7 @@
 <script src="assets/angular/controllers/OneTimeNoteShowCtrl.js" type="application/javascript"></script>
 <script src="assets/angular/controllers/OneTimeNoteCreateSuccessCtrl.js" type="application/javascript"></script>
 <script src="assets/angular/services/OneTimeNoteFactory.js" type="application/javascript"></script>
+<script src="assets/js/scripts.js" type="application/javascript"></script>
+<!-- endbuild -->
 </body>
 </html>
