@@ -63,16 +63,11 @@ gulp.task('build', function() {
 
     var gitRemoteUrl = 'https://github.com/Pathsofdesign/OneTimeNote-site';
 
-    // 1 - Scripts
-    gulp.src(['./app/assets/angular/app.js', './app/assets/angular/controllers/*', './app/assets/angular/services/*', './app/assets/js/*'])
-        .pipe(concat('scripts.min.js'))
-        .pipe(gulp.dest('./dist/assets/scripts'));
-
-    // 2 - CSS
+    // 1 - CSS
     gulp.src('./app/assets/css/styles.min.css')
         .pipe(gulp.dest('./dist/assets/css'));
 
-    // 3 - Angular HTML: Views
+    // 2 - Angular HTML: Views
     gulp.src(['./app/assets/angular/views/*'])
         .pipe(gulp.dest('./dist/assets/angular/views'));
 
@@ -84,7 +79,7 @@ gulp.task('build', function() {
     gulp.src(['./app/assets/fonts/*'])
         .pipe(gulp.dest('./dist/assets/fonts'));
 
-    // 5 - Index file
+    // 5 - Index file + Scripts
     gulp.src('./app/index.html')
         .pipe(usemin())
         .pipe(gulp.dest('./dist'));
