@@ -85,7 +85,7 @@ gulp.task('build', function() {
         .pipe(gulp.dest('./dist/assets/fonts'));
 
     // 5 - Index file
-    gulp.src('app/index.html')
+    gulp.src('./app/index.html')
         .pipe(usemin())
         .pipe(gulp.dest('./dist'));
 
