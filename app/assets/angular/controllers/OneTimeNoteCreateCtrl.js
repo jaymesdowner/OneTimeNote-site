@@ -5,7 +5,7 @@
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
         $scope.note = null;
-        3
+        
         $scope.create = function() {
             OneTimeNoteFactory.create($scope.note)
         };

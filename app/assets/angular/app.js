@@ -12,5 +12,5 @@
                 otherwise({ redirectTo: '/' });
         }
         ])
-        .constant('ApiUrl', 'http://onetimenote.com')
+        .constant('ApiUrl', 'http://onetimenote.pathsofdesign.com')
 })();
