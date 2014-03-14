@@ -8,6 +8,14 @@
 <div>
     <div ng-include="'assets/angular/partials/nav.html'"></div>
     <div id="main-content">
+        <div class="row">
+            <div class="large-12 columns">
+                <div data-alert class="alert-box warning">
+                    Warning: This is a Demo - Notes are not transmitted over HTTPS and are not secure.
+                    <a href="#" class="close">&times;</a>
+                </div>
+            </div>
+        </div>
         <div ng-view=""></div>
     </div>
 </div>
