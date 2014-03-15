@@ -71,15 +71,11 @@ gulp.task('build', function() {
     gulp.src(['./app/assets/angular/views/*'])
         .pipe(gulp.dest('./dist/assets/angular/views'));
 
-    // 3 - Angular HTML: Partials
-    gulp.src(['./app/assets/angular/partials/*'])
-        .pipe(gulp.dest('./dist/assets/angular/partials'));
-
-    // 4 - Fonts
+    // 3 - Fonts
     gulp.src(['./app/assets/fonts/*'])
         .pipe(gulp.dest('./dist/assets/fonts'));
 
-    // 5 - Index file + Scripts
+    // 4 - Index file + Scripts
     gulp.src('./app/index.html')
         .pipe(usemin())
         .pipe(gulp.dest('./dist'));
