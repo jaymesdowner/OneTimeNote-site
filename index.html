@@ -4,11 +4,28 @@
     <title>OneTimeNote</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <script src="bower_components/modernizr/modernizr.js"></script>
     <link href="assets/css/styles.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <div>
-    <div ng-include="'assets/angular/partials/nav.html'"></div>
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">OneTimeNote</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- right Nav Section -->
+            <ul class="right">
+                <li><a href="#">About</a></li>
+                <li class="divider"></li>
+                <li class="has-form"><a href="#/create" class="button small"><i class="foundicon-page" style="position: relative; left: -3px; top: 2px"></i>Create Note</a></li>
+            </ul>
+        </section>
+    </nav>
     <div id="main-content">
         <div class="row">
             <div class="large-12 columns">
