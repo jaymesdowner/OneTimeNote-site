@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('OneTimeNoteApp', ['ngRoute', 'ngSanitize'])
+    angular.module('OneTimeNoteApp', ['ngRoute', 'ngSanitize', 'angular-medium-editor'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.
                 when('/', { templateUrl: 'assets/angular/views/welcome.html', controller: 'OneTimeNoteWelcomeCtrl' }).

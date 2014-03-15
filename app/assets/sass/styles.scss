@@ -2,6 +2,16 @@
 @import '../../bower_components/foundation-icons/foundation_icons_general/sass/general_foundicons';
 @import '../../bower_components/foundation/scss/foundation';
 
+*:focus {
+    outline: none;
+}
+
+#note-field {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
 footer {
     border-top: 1px solid #eee;
     padding-top: 20px;
@@ -20,8 +30,4 @@ footer {
     .button {
         padding-bottom: .45rem;
     }
-}
-
-textarea {
-    height: 9rem;
 }

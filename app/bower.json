@@ -18,6 +18,11 @@
     "angular-route": "~1.2.14",
     "foundation-icons": "git://github.com/zurb/foundation-icons.git",
     "angular-mocks": "~1.2.14",
-    "angular-sanitize": "~1.2.14"
+    "angular-sanitize": "~1.2.14",
+    "angular-medium-editor": "*",
+    "medium-editor": "~1.6.7"
+  },
+  "resolutions": {
+    "angular": "1.2.14"
   }
 }
